@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brainrot Portal</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <style>
+        .vanta-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .brainrot-btn {
+            font-family: 'Press Start 2P', cursive;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px #00ff9d;
+        }
+
+        .brainrot-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px #00ff9d;
+        }
+
+        .floating-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body class="bg-black text-green-400 min-h-screen flex items-center justify-center">
+
+    <div id="vanta-bg" class="vanta-bg"></div>
+
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">
+                MÉTODO DO MOREIRA
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 font-mono">
+                Seu caminho para o sucesso digital
+            </p>
+        </div>
+
+        <div class="flex flex-col items-center">
+            <a 
+                href="https://www.roblox.com/share?code=0f5d1a911d9a1845bd1214ce0c06114f&type=Server"
+                target="_blank"
+                class="brainrot-btn bg-black border-2 border-green-500 text-green-400 px-8 py-4 rounded-lg text-lg md:text-xl mb-8 flex items-center"
+            >
+                <i data-feather="plus-circle" class="mr-3"></i>
+                ADICIONE SEU LINK AQUI👈
+            </a>
+
+            <div class="floating-icon mt-12">
+                <i data-feather="cpu" class="w-16 h-16 text-green-500"></i>
+            </div>
+
+            <div class="mt-8 text-center">
+                <p class="text-sm md:text-base opacity-70 font-mono">
+                    Clique no link acima e venha facilitar seus roubos
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Define background image
+        const bg = document.getElementById('vanta-bg');
+        bg.style.backgroundImage = "url('https://tr.rbxcdn.com/6f4d3e3f9d77d1e4a1cbe4ec2eecd1a1/768/432/Image/Png')";
+        bg.style.backgroundSize = "cover";
+        bg.style.backgroundPosition = "center";
+        bg.style.backgroundRepeat = "no-repeat";
+
+        // Replace icons
+        feather.replace();
+
+        // Animation on hover
+        const btn = document.querySelector('.brainrot-btn');
+        const icon = document.querySelector('.floating-icon');
+
+        btn.addEventListener('mouseover', function() {
+            anime({
+                targets: icon,
+                scale: [1, 1.2],
+                duration: 500,
+                easing: 'easeInOutQuad'
+            });
+        });
+
+        btn.addEventListener('mouseout', function() {
+            anime({
+                targets: icon,
+                scale: 1,
+                duration: 500,
+                easing: 'easeInOutQuad'
+            });
+        });
+    </script>
+</body>
+</html>
